@@ -46,6 +46,7 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
  /* Additional styles for the navigation bar */
  nav {
   margin-bottom: 20px;
@@ -67,11 +68,96 @@ nav a {
   align-items: center;
 }
 
-.topbar nav a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #222;
-  font-weight: bold;
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.logo-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #0a0a0a;
+  white-space: nowrap;
+}
+
+/* Tab List Container */
+.tab-list {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  height: 36px;
+  padding: 3px;
+  background: #ececf0;
+  border-radius: 14px;
+}
+
+/* Tab Button Base Styles */
+.tab-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1; /* Replaces fixed width: 302.5px calculation */
+  height: 100%;
+  padding: 0 12px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+
+
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Active State */
+.tab-button.active {
+  background: #ffffff;
+}
+
+.tab-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+}
+.tab-button:hover .tab-icon,
+.tab-button.active .tab-icon {
+  filter: brightness(0); /* Makes black SVGs black */
+  opacity: 0.8;
+}
+
+/* Text Label */
+.tab-label {
+  white-space: nowrap;
 }
 
 .dashboard-container {
